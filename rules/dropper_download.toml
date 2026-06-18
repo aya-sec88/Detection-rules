@@ -1,0 +1,24 @@
+[metadata]
+creation_date = "2026/06/18"
+last_modified = "2026/06/18"
+
+[rule]
+author = ["Aya"]
+description = "Detects use of curl or wget to download suspicious shell or ELF files, indicating a dropper stage of a malware infection chain."
+index = ["logs-endpoint.events.process-*"]
+language = "kuery"
+license = "Elastic License v2"
+name = "Dropper Download Detected"
+query = '''
+process.name : ("curl" OR "wget") AND process.command_line : ("*.sh" OR "*.elf")
+'''
+severity = "high"
+type = "query"
+
+[[rule.threat]]
+framework = "MITRE ATT&CK"
+
+[[rule.threat.technique]]
+id = "T1105"
+name = "Ingress Tool Transfer"
+reference = "https://attack.mitre.org/techniques/T1105/"

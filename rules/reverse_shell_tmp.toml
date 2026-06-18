@@ -1,0 +1,29 @@
+[metadata]
+creation_date = "2026/06/18"
+last_modified = "2026/06/18"
+
+[rule]
+author = ["Aya"]
+description = "Detects execution of an ELF binary from the /tmp directory, a common technique used by attackers to run reverse shell payloads after dropper delivery."
+index = ["logs-endpoint.events.process-*"]
+language = "kuery"
+license = "Elastic License v2"
+name = "Reverse Shell Executed from /tmp"
+query = '''
+process.executable : "/tmp/*.elf"
+'''
+severity = "critical"
+type = "query"
+
+[[rule.threat]]
+framework = "MITRE ATT&CK"
+
+[[rule.threat.technique]]
+id = "T1059"
+name = "Command and Scripting Interpreter"
+reference = "https://attack.mitre.org/techniques/T1059/"
+
+[[rule.threat.technique.subtechnique]]
+id = "T1059.004"
+name = "Unix Shell"
+reference = "https://attack.mitre.org/techniques/T1059/004/"
