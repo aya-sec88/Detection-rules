@@ -1,0 +1,28 @@
+{
+  "name": "Detection Coverage",
+  "versions": {
+    "attack": "19",
+    "navigator": "4.5"
+  },
+  "domain": "enterprise-attack",
+  "techniques": [
+    {
+      "techniqueID": "T1105",
+      "color": "#ff6666",
+      "comment": "Dropper Download Detected",
+      "enabled": true
+    },
+    {
+      "techniqueID": "T1059",
+      "color": "#ff6666",
+      "comment": "Reverse Shell Executed from /tmp",
+      "enabled": true
+    },
+    {
+      "techniqueID": "T1059.004",
+      "color": "#ff6666",
+      "comment": "Reverse Shell Executed from /tmp",
+      "enabled": true
+    }
+  ]
+}

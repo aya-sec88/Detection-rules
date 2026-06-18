@@ -1,0 +1,3 @@
+name,severity,index,techniques,query
+Dropper Download Detected,high,logs-endpoint.events.process-*,T1105,"process.name : (""curl"" OR ""wget"") AND process.command_line : (""*.sh"" OR ""*.elf"")"
+Reverse Shell Executed from /tmp,critical,logs-endpoint.events.process-*,"T1059, T1059.004","process.executable : ""/tmp/*.elf"""

@@ -58,7 +58,7 @@ for rule in rules:
 
 navigator = {
     "name": "Detection Coverage",
-    "versions": {"attack": "14", "navigator": "4.9"},
+    "versions": {"attack": "19", "navigator": "4.5"},
     "domain": "enterprise-attack",
     "techniques": techniques_list
 }
