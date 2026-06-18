@@ -14,3 +14,4 @@ A collection of Elastic detection rules built from real attack scenarios, with a
 | Reverse Shell Executed from /tmp | Critical | T1059.004 - Unix Shell |
 
 ## Structure
+ 
